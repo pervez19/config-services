@@ -13,6 +13,18 @@ spring:
       httpclient:
         connect-timeout: 2000      # ms
         response-timeout: 10s
+      # CORS is handled only here (single entry point); browser preflight (OPTIONS) is answered by the
+      # gateway before API-key/JWT checks. Add your production frontend URL, e.g. "https://app.example.com".
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origin-patterns:
+              - "http://localhost:[*]"
+              - "http://127.0.0.1:[*]"
+            allowed-methods: GET,POST,PUT,PATCH,DELETE,OPTIONS
+            allowed-headers: "*"
+            allow-credentials: true
+            max-age: 3600
     loadbalancer:
       cache:
         ttl: 5s                    # pick up new/removed instances quickly (default 35s)
