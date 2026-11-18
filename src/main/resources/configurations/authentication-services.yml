@@ -1,0 +1,36 @@
+eureka:
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 10   # heartbeat (default 30s)
+    lease-expiration-duration-in-seconds: 30 # evict after missed heartbeats (default 90s)
+  client:
+    healthcheck:
+      enabled: true                          # publish actuator health (DB down => DOWN => no traffic)
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8081
+spring:
+  application:
+    name: authentication-services
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/db-acl
+    username: postgres
+    password: '{cipher}0feb0be69e4a420178bf4b5128c0da52872ebf06acee5ffe7de9af9bdce3f1b60d005a9ea407718423c4da3202787596bc297bc5b8ba88f6c0e1eb3c6bde9461'
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+applications:
+  jwtConfig:
+    header: Authorization
+    prefix: Bearer
+    expirationDateInMs: 3600000
+    refreshExpirationDateInMs: 7200000
+    secret: '{cipher}645ffc19a654f62d780eac98923628b269c9a677fa9af54eaeb3078d9533091f9b88f865025627f542d1a2eb6bb5d2fe1f70d17d5b86a7d44813396724d5d21256f499f404914301e1ad6a0e85e65b25ddf862f4028be8da8c1f26d2614a49eb78f4396f6b740b1c47ce3fab2a2c50d7'

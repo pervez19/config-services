@@ -1,0 +1,29 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+server:
+  port: 8092
+spring:
+  application:
+    name: social-gateway
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/db-product-service
+    username: postgres
+    password: '{cipher}0feb0be69e4a420178bf4b5128c0da52872ebf06acee5ffe7de9af9bdce3f1b60d005a9ea407718423c4da3202787596bc297bc5b8ba88f6c0e1eb3c6bde9461'
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+application:
+  config:
+    authentication-services-url: http://localhost:8081
