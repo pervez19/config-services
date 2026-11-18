@@ -1,0 +1,6 @@
+# Shared by every service that loads config from this server.
+# The RSA public key is NOT a secret: services use it to verify JWTs signed by authentication-services.
+applications:
+  jwtConfig:
+    prefix: Bearer
+    publicKey: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0SUVBcCR/CP+k2p/RjRLVxuFGXzApRme14yLioFyjIvD9tz/GePsxNzzzsW9QSwlJbvql2L9R3onAicHla6GWArSbCdkdUy7qQeR4ZKTfxt7lvb5c8LVDQT5d6zgJXhkCl1DyK9Kdk/6r0xBKr6rKGGM7RbwaKAimTnGcgvM6kFX8hHOCWymKCOSOk9CSVoRT731aAUoFC9fU75DwYIYNiw/Up3m8UG/3RmU7o+WPtl8Z4X+d39PPGhwojBlBScUVI7Ru0t3IG46K38XFHF3H6b/B8l9ZEJkdi4IVfmqPLacWaJnruOAs/ivVnjTookMBnhxHOeegPMFM8FbiGGbcQIDAQAB

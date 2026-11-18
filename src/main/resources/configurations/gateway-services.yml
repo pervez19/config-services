@@ -32,7 +32,3 @@ management:
     web:
       exposure:
         include: health,info       # do not expose the 'gateway' endpoint: it allows editing routes
-applications:
-  jwtConfig:
-    prefix: Bearer
-    secret: '{cipher}645ffc19a654f62d780eac98923628b269c9a677fa9af54eaeb3078d9533091f9b88f865025627f542d1a2eb6bb5d2fe1f70d17d5b86a7d44813396724d5d21256f499f404914301e1ad6a0e85e65b25ddf862f4028be8da8c1f26d2614a49eb78f4396f6b740b1c47ce3fab2a2c50d7'
