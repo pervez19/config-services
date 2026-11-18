@@ -1,6 +1,6 @@
-# Secrets in configurations/*.yml are stored as '{cipher}...' and decrypted here before being served.
-# The key comes from the ENCRYPT_KEY environment variable (binds to encrypt.key); it is never committed.
-# Encrypt a new value:  curl -H "Content-Type: text/plain" --data-binary "my-secret" localhost:8888/encrypt
+# Values in configurations/*.yml are plain text (no ENCRYPT_KEY needed).
+# Optional: to store a value encrypted as '{cipher}...', start this server with an ENCRYPT_KEY env var and use
+#   curl -H "Content-Type: text/plain" --data-binary "my-secret" localhost:8888/encrypt
 server:
   port: 8888
 spring:
